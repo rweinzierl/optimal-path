@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+  	mavenLocal()    
+	maven {
+        url "https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases"
+    }
+	mavenCentral()
+}
+
+dependencies {
+    compile project(':netcdf-util')
+    
+    compile 'edu.ucar:netcdf:4.3.16'
+    compile 'edu.ucar:grib:4.3.16'
+    compile 'de.micromata.jak:JavaAPIforKml:2.2.1'
+    compile 'org.apache.commons:commons-collections4:4.0'
+}
+
+test {
+    exclude '**/*.class'
+}
